@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\C#\\C#.csproj": {}
+    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj": {}
   },
   "projects": {
-    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\C#\\C#.csproj": {
+    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\C#\\C#.csproj",
+        "projectUniqueName": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\C#\\C#.csproj",
+        "projectPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj",
         "packagesPath": "C:\\Users\\Osvaldo Moreno\\.nuget\\packages\\",
-        "outputPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\C#\\obj\\",
+        "outputPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Osvaldo Moreno\\AppData\\Roaming\\NuGet\\NuGet.Config"
