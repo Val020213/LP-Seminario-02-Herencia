@@ -8,11 +8,12 @@
 - [C++](./C++/main.cpp)
 - [Python](./Python/main.ipynb)
 
+
 ## Diagrama de Clases de la Solución Csharp
 
 [Diagrama de Clases Imagen](Frame%202608621.png)
 
-```Mermaid
+```mermaid
 graph LR
     Persona --> Plantilla
     Plantilla --> Trabajador
