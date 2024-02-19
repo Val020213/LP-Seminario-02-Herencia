@@ -1,0 +1,14 @@
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/bin/Debug/net7.0/C#
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/bin/Debug/net7.0/C#.deps.json
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/bin/Debug/net7.0/C#.runtimeconfig.json
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/bin/Debug/net7.0/C#.dll
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/bin/Debug/net7.0/C#.pdb
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.GeneratedMSBuildEditorConfig.editorconfig
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.AssemblyInfoInputs.cache
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.AssemblyInfo.cs
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.csproj.CoreCompileInputs.cache
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.dll
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/refint/C#.dll
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.pdb
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/C#.genruntimeconfig.cache
+/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/Debug/net7.0/ref/C#.dll
