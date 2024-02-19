@@ -23,9 +23,6 @@ graph LR
     IE[Interfaz Estudiante] --> PA[Profesor Adiestrado]
     IP[Interfaz IProfesor] --> Profesor
     IP[Interfaz IProfesor] --> AA[Alumno Ayudante]
-    IA[Interfaz Asalariado] --> AA[Alumno Ayudante]
-    IA[Interfaz Asalariado] --> Trabajador
-
 ```
 
 ## En qué casos la herencia múltiple puede causar ambigüedad? Ejemplifique
