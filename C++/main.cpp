@@ -85,7 +85,7 @@ int escenario1()
 {
     Transportado t = Transportado();
     // t.CogerTransporte(); // Ambiguedad error de compilacion
-    t.ProfesorAfectado::CogerTransporte(); // resolucion de ambiguedad
+    t.ProfesorAfectado::CogerTransporte(); // resolución de ambiguedad
     return 0;
 }
 
