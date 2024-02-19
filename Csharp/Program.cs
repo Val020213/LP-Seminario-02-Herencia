@@ -2,12 +2,12 @@
 public static class Program
 {
     #region  Diseño de clases e interfaces
-    public interface IEstudiante
+    public interface IRecibidorDeClases
     {
         public void RecibirClase() => Console.WriteLine("Recibiendo clase");
     }
 
-    public interface IProfesor
+    public interface IImpartidorDeClase
     {
         public void ImpartirClase() => Console.WriteLine("Impartiendo clase");
     }
@@ -33,7 +33,7 @@ public static class Program
         public Trabajador(string nombre, float salario) : base(nombre, salario) { }
     }
 
-    public class Profesor : Trabajador, IProfesor
+    public class Profesor : Trabajador, IImpartidorDeClase
     {
         public int HorasClase;
         public Profesor(string nombre, float salario, int horasClase) : base(nombre, salario) 
@@ -43,14 +43,14 @@ public static class Program
         public void ImpartirClase() => Console.WriteLine("Impartiendo clase como profesor");
     }
 
-    public class ProfesorAdiestrado : Profesor, IEstudiante
+    public class ProfesorAdiestrado : Profesor, IRecibidorDeClases
     {
         public ProfesorAdiestrado(string nombre, float salario, int horasClase) : base(nombre, salario, horasClase) { }
         public void RecibirClase() => Console.WriteLine("Recibiendo clase como profesor adiestrado");
 
     }
 
-    public class Estudiante : Plantilla, IEstudiante
+    public class Estudiante : Plantilla, IRecibidorDeClases
     {
         public int HorasClase;
         public Estudiante(string nombre, float salario, int horasClase) : base(nombre, salario) 
@@ -60,7 +60,7 @@ public static class Program
 
         public void RecibirClase() => Console.WriteLine("Recibiendo clase como estudiante");
     }
-    public class AlumnoAyudante : Estudiante, IProfesor
+    public class AlumnoAyudante : Estudiante, IImpartidorDeClase
     {
         public AlumnoAyudante(string nombre, float salario, int horasClase)
         : base(nombre, salario, horasClase)
@@ -79,9 +79,9 @@ public static class Program
         Console.WriteLine(alumnoAyudante is Profesor); // false
 
         Console.WriteLine("Alumno ayudante se comporta como estudiante?");
-        Console.WriteLine(alumnoAyudante is IEstudiante); // true
-        Console.WriteLine("Alumno ayudante se comporta como Iprofesor?");
-        Console.WriteLine(alumnoAyudante is IProfesor); // true 
+        Console.WriteLine(alumnoAyudante is IRecibidorDeClases); // true
+        Console.WriteLine("Alumno ayudante se comporta como IImpartidorDeClase?");
+        Console.WriteLine(alumnoAyudante is IImpartidorDeClase); // true 
 
         Console.WriteLine();
         escenarioAmbiguedad();
