@@ -8,7 +8,6 @@
 - [C++](./C++/main.cpp)
 - [Python](./Python/main.ipynb)
 
-
 ## Diagrama de Clases de la Solución Csharp
 
 [Diagrama de Clases Imagen](Frame%202608621.png)
@@ -34,7 +33,7 @@ graph LR
 ## En qué casos la herencia múltiple puede causar ambigüedad? Ejemplifique
 
 La herencia múltiple puede causar ambigüedad cuando una clase hereda de dos clases que tienen un método con el mismo nombre. Por ejemplo, si una clase `A` hereda de dos clases `B` y `C` y ambas clases `B` y `C` tienen un método `M`, entonces la clase `A` heredará dos métodos `M` con el mismo nombre.
-En la soluciones propuestas propusimos un escenario y como actua cada lenguaje en este caso.
+En la soluciones propuestas propusimos un escenario y como actúa cada lenguaje en este caso.
 
 Ejemplo:
 
