@@ -19,10 +19,10 @@ graph LR
     Plantilla --> Estudiante
     Estudiante --> AA[Alumno Ayudante]
 
-    IE[Interfaz Estudiante] --> Estudiante
-    IE[Interfaz Estudiante] --> PA[Profesor Adiestrado]
-    IP[Interfaz IProfesor] --> Profesor
-    IP[Interfaz IProfesor] --> AA[Alumno Ayudante]
+    IE[Interfaz Recibidor de Clases] --> Estudiante
+    IE[Interfaz Recibidor de Clases] --> PA[Profesor Adiestrado]
+    IP[Interfaz Impartidor de Clases] --> Profesor
+    IP[Interfaz Impartidor de Clases] --> AA[Alumno Ayudante]
 ```
 
 ## En qué casos la herencia múltiple puede causar ambigüedad? Ejemplifique
