@@ -1,7 +1,5 @@
 # Seminario II Herencia Múltiple
 
-[Orden del Seminario](seminario_02_herencia.md)
-
 ## Implementación de la solución del problema en los respectivos lenguajes
 
 - [C#](./Csharp/Program.cs)
