@@ -2,20 +2,23 @@
 public static class Program
 {
     #region  Diseño de clases e interfaces
-    public interface IRecibidorDeClases
-    {
-        public void RecibirClase() => Console.WriteLine("Recibiendo clase");
-    }
-
-    public interface IImpartidorDeClase
-    {
-        public void ImpartirClase() => Console.WriteLine("Impartiendo clase");
-    }
 
     public class Persona
     {
         public string Nombre;
         public Persona(string nombre) { Nombre = nombre; }
+    }
+
+    public interface IRecibidorDeClases
+    {
+        public int HorasRecibirClase { get; set; }
+        public void RecibirClase() => Console.WriteLine("Recibiendo clase");
+    }
+
+    public interface IImpartidorDeClase
+    {
+        public int HorasImpartirClase { get; set; }
+        public void ImpartirClase() => Console.WriteLine("Impartiendo clase");
     }
 
     public class Plantilla : Persona
@@ -35,36 +38,44 @@ public static class Program
 
     public class Profesor : Trabajador, IImpartidorDeClase
     {
-        public int HorasClase;
-        public Profesor(string nombre, float salario, int horasClase) : base(nombre, salario) 
+        // se tiene que reedefinir la propiedad HorasImpartirClase
+        public int HorasImpartirClase { get; set; }
+        public Profesor(string nombre, float salario, int horasClase) : base(nombre, salario)
         {
-            HorasClase = horasClase;
+            HorasImpartirClase = horasClase;
         }
-        public void ImpartirClase() => Console.WriteLine("Impartiendo clase como profesor");
     }
 
     public class ProfesorAdiestrado : Profesor, IRecibidorDeClases
     {
-        public ProfesorAdiestrado(string nombre, float salario, int horasClase) : base(nombre, salario, horasClase) { }
+        public int HorasRecibirClase { get; set; }
+        public ProfesorAdiestrado(string nombre, float salario, int horasImpartirClase, int HorasRecibirClase) : base(nombre, salario, horasImpartirClase)
+        {
+            this.HorasRecibirClase = HorasRecibirClase;
+        }
         public void RecibirClase() => Console.WriteLine("Recibiendo clase como profesor adiestrado");
 
     }
 
     public class Estudiante : Plantilla, IRecibidorDeClases
     {
-        public int HorasClase;
-        public Estudiante(string nombre, float salario, int horasClase) : base(nombre, salario) 
-        { 
-            HorasClase = horasClase;
+        public int HorasRecibirClase { get; set; }
+
+        public Estudiante(string nombre, float salario, int horasRecibirClase) : base(nombre, salario)
+        {
+            HorasRecibirClase = horasRecibirClase;
         }
 
-        public void RecibirClase() => Console.WriteLine("Recibiendo clase como estudiante");
     }
     public class AlumnoAyudante : Estudiante, IImpartidorDeClase
     {
-        public AlumnoAyudante(string nombre, float salario, int horasClase)
-        : base(nombre, salario, horasClase)
-        { }
+        public int HorasImpartirClase { get; set; }
+        public AlumnoAyudante(string nombre, float salario, int horasRecibirClase, int horasImpartirClase)
+        : base(nombre, salario, horasRecibirClase)
+        {
+            HorasImpartirClase = horasImpartirClase;
+        }
+
         public void ImpartirClase() => Console.WriteLine("Impartiendo clase como alumno ayudante");
     }
     #endregion
@@ -72,7 +83,7 @@ public static class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("Probemos si las clases y las interfaces están bien definidas");
-        AlumnoAyudante alumnoAyudante = new AlumnoAyudante("Alumno Ayudante", 1000, 500);
+        AlumnoAyudante alumnoAyudante = new AlumnoAyudante("Alumno Ayudante", 1000, 10, 5);
         Console.WriteLine("Alumno ayudante se comporta como trabajador?");
         Console.WriteLine(alumnoAyudante is Trabajador); // false
         Console.WriteLine("Alumno ayudante se comporta como profesor?");
@@ -111,11 +122,11 @@ public static class Program
     class PersonalTransportado : ITransporteEstudiante, ITransporteProfesor
     {
         public PersonalTransportado() { }
-        
+
     }
 
     public static void escenarioAmbiguedad()
-    { 
+    {
         PersonalTransportado personalTransportado = new PersonalTransportado();
         ((ITransporteEstudiante)personalTransportado).CogerBus(); // Cogiendo el bus como estudiante
         ((ITransporteProfesor)personalTransportado).CogerBus(); // Cogiendo el bus como profesor
