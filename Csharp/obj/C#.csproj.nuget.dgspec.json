@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/C#.csproj": {}
+    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj": {}
   },
   "projects": {
-    "/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/C#.csproj": {
+    "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/C#.csproj",
+        "projectUniqueName": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/C#.csproj",
-        "packagesPath": "/home/danielhp/.nuget/packages/",
-        "outputPath": "/media/danielhp/DATA/Escuela/C. Computación/Tercer Año/LP/Seminarios/LP-Seminario-02-Herencia/Csharp/obj/",
+        "projectPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\C#.csproj",
+        "packagesPath": "C:\\Users\\Osvaldo Moreno\\.nuget\\packages\\",
+        "outputPath": "C:\\Osvaldo\\Escuela\\Herencia\\Seminario Herencia\\Csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/danielhp/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Osvaldo Moreno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

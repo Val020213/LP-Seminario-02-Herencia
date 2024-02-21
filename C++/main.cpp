@@ -23,7 +23,6 @@ public:
     IImpartirClase(string nombre, int horasRecibirClase) : Persona(nombre) {}
     void ImpartirClase() { cout << "Impartiendo clase" << endl; }
 };
-
 class Plantilla : public Persona
 {
 public:
@@ -31,7 +30,6 @@ public:
     Plantilla(string nombre, float salario) : Persona(nombre), Salario(salario) {}
     void CobrarSalario() { cout << "Cobrar salario como plantilla" << endl; }
 };
-
 class Trabajador : public Plantilla
 {
 public:
@@ -104,6 +102,49 @@ void escenarioAmbiguedad()
     personalTransportado2.CogerBus();
 }
 
+class A
+{
+public:
+    A(){};
+    void f() { cout << "A::f" << endl; }
+};
+
+class B : public A
+{
+public:
+    B(){};
+    void f() { cout << "B::f" << endl; }
+};
+
+class C : public A
+{
+public:
+    C(){};
+    void f() { cout << "C::f" << endl; }
+};
+
+class D : public B, public C
+{
+public:
+    D(){};
+};
+
+class Animal {
+public:
+    virtual void eat() { std::cout << "I'm eating generic food.\n"; }
+};
+
+class Mammal : virtual public Animal {
+};
+
+class WingedAnimal : virtual public Animal {
+};
+
+class Bat : public Mammal, public WingedAnimal {
+};
+
+
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -113,9 +154,19 @@ int main()
     cout << "Alumno ayudante se comporta como trabajador?" << endl;
     AlumnoAyudante alumnoAyudante("Alumno Ayudante", 1000, 500, 1000);
 
-    // cout << alumnoAyudante.nombre << endl; // ambiguedad
+    // cout << alumnoAyudante.Nombre << endl; // ambiguedad
     cout << "Alumno ayudante se comporta como estudiante?" << endl;
     cout << (dynamic_cast<Estudiante *>(&alumnoAyudante) != nullptr) << endl; // true
 
     escenarioAmbiguedad();
+
+    D d;
+    d.B::f();
+    d.C::f();
+    // d.f();
+
+    Bat bat;
+    bat.eat();
+
+    return 0;
 }

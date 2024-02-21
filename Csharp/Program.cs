@@ -21,6 +21,7 @@ public static class Program
         public void ImpartirClase() => Console.WriteLine("Impartiendo clase");
     }
 
+
     public class Plantilla : Persona
     {
         public float Salario;
@@ -30,6 +31,7 @@ public static class Program
         }
         public void CobrarSalario() => System.Console.WriteLine("Cobrar salario como plantilla");
     }
+    
 
     public class Trabajador : Plantilla
     {
@@ -98,6 +100,11 @@ public static class Program
         escenarioAmbiguedad();
         Console.WriteLine();
         escenarioGuardia();
+        Console.WriteLine();
+        escenario3();
+        Console.WriteLine();
+        escenario4();
+
     }
 
     /* 
@@ -177,5 +184,54 @@ public static class Program
         ICustodio custodioDelta = new Seguridad();
         custodioDelta.Guardia();
     }
+
+    class A
+    {
+        public virtual void Metodo() => System.Console.WriteLine("Metodo de A");
+    }
+
+    class B : A
+    {
+        public override void Metodo() => System.Console.WriteLine("Metodo de B");
+    }
+
+    public static void escenario3()
+    {
+        A a = new A();
+        a.Metodo(); // Metodo de A
+
+        B b = new B();
+        b.Metodo(); // Metodo de B
+
+        A ab = new B();
+        ab.Metodo(); // Metodo de B
+
+        B br = new B();
+        ((A)br).Metodo(); // Metodo de B
+    }
+
+
+    class C
+    {
+        public void Metodo() => System.Console.WriteLine("Metodo de C");
+    }
+
+    class D : C
+    {
+        public new void Metodo() => System.Console.WriteLine("Metodo de D");
+    }
+
+    public static void escenario4()
+    {
+        C c = new C();
+        c.Metodo(); // Metodo de C
+
+        D d = new D();
+        d.Metodo(); // Metodo de D
+
+        C cd = new D();
+        cd.Metodo(); // Metodo de C
+    }
+
 }
 

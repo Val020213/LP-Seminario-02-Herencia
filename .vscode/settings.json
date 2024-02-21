@@ -5,5 +5,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "format": "cpp"
-    }
+    },
+    "cSpell.enableFiletypes": [
+        "markdown"
+    ]
 }
