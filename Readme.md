@@ -13,6 +13,9 @@
 ```mermaid
 graph LR
     Persona --> Plantilla
+    Persona --> IE[Interfaz Recibidor de Clases]
+    Persona --> IP[Interfaz Impartidor de Clases]
+    
     Plantilla --> Trabajador
     Trabajador --> Profesor
     Profesor --> PA[Profesor Adiestrado]
