@@ -58,7 +58,7 @@ y que a su vez toda persona que recibe un pago es `Plantilla` de la universidad.
 
 ```
 
-Luego en el problema se introducen dos nuevas clases, `Estudiante` y `Trabajador`, ambas son plantilla de la universidad. Además, todo `Profesor` es un trabajador. Tanto el Estudiante como el Profesor deben implementar dos funciones: Recibir Clases e Impartir Clases, respectivamente.
+Luego en el problema se introducen dos nuevas clases, `Estudiante` y `Trabajador`, ambas son plantilla de la universidad. Además, todo `Profesor` es un `Trabajador`. Tanto el Estudiante como el Profesor deben implementar dos funciones:`Recibir Clases`e`Impartir Clases`, respectivamente.
 
 Inicialmente, podríamos pensar en implementar estos métodos directamente en las clases Estudiante y Profesor. Sin embargo, más adelante se introducen dos nuevas clases: `Alumno Ayudante`, que es un estudiante capaz de impartir clases, y `Profesor Adiestrado`, que es un profesor capaz de recibir clases.
 
@@ -125,7 +125,7 @@ Finalmente, se implementan las clases `Estudiante`, `Profesor`, `Alumno Ayudante
     }
 ```
 
-Como podemos observar al tener las propiedades `HorasImpartirClase` y `HorasRecibirClase` en las interfaces, cada clase que implemente las interfaces `IImpartidorDeClase` e `IRecibidorDeClases` tiene que redefinir estas propiedades. Lo cual puede ser un problema si se tiene que implementar muchas clases que sobre estas interfaces o si se tiene que cambiar el nombre de estas propiedades.
+Como podemos observar al tener las propiedades `HorasImpartirClase` y `HorasRecibirClase` en las interfaces, cada clase que implemente las interfaces `IImpartidorDeClase` e `IRecibidorDeClases` tiene que redefinir estas propiedades, lo cual puede ser un problema si se tienen que implementar muchas clases que hereden de estas interfaces o si se tiene que cambiar el nombre de estas propiedades.
 (No DRY)
 
 Por otro lado la implentación dada cumple los requisitos, veamos el siguiente ejemplo:
@@ -844,14 +844,12 @@ En Python, la visibilidad se controla mediante convenciones y no a través de mo
 ## Representación de Objetos en Memoria
 
 ## C#
+
 Las variables de C# se almacenan en el Stack o en el Heap, dependiendo de si la variable es de tipo referencia o valor, y del contexto en el que se declara la variable.
 
 - Las variables locales (es decir, aquellas que se declaran dentro de los métodos) se almacenan en el Stack. Esto significa que sus valores se almacenan en el Stack. En el caso de variables locales de tipo referencia, tienen referencias almacenadas en el Stack, mientras que las variables locales de tipo valor tienen valores reales almacenados en el Heap.
-
 - Los objetos a los que apuntan las variables de tipo referencia siempre se almacenan en el Heap.
-
 - Las variables de instancia que forman parte de una instancia de tipo referencia (por ejemplo, un campo en una clase) se almacenan en el Heap junto con el objeto mismo.
-
 - Las variables de instancia que forman parte de una instancia de tipo valor se almacenan en el mismo contexto que la variable que declara el tipo valor. Esto significa que una variable de una estructura declarada en un método se almacenará en el Stack, mientras que una variable de una estructura declarada dentro de una clase (es decir, un campo de la clase) se almacenará en el Heap.
 
 **Nota:** La representación exacta en memoria puede depender de la implementación específica del runtime de C# (como el Common Language Runtime - CLR). Sin embargo, podemos proporcionar una representación conceptual gráfica de cómo podrían almacenarse los datos y métodos en memoria.
@@ -1004,14 +1002,15 @@ class Program
 
 En este ejemplo, la clase Perro hereda de la clase Animal. Cuando se crea un objeto de la clase Perro, en memoria, el objeto contendrá tanto los miembros de la clase Animal como los de la clase Perro. El constructor de la clase derivada (Perro) invoca el constructor de la clase base (Animal) mediante la palabra clave base. El objeto de la clase Perro tendría dos secciones de memoria: una para el miembro Nombre de la clase base (Animal) y otra para el miembro Raza de la clase derivada (Perro).
 
-| Objeto Perro (Asignado en el Heap)        |
-| ----------------- |
-| Animal.Nombre      |
-| Perro.Raza       |
+
+| Objeto Perro (Asignado en el Heap) |
+| ------------------------------------ |
+| Animal.Nombre                      |
+| Perro.Raza                         |
 
 #### Ejemplo de objeto perteneciente a una clase que utilice herencia múltiple
 
-En C#, no se admite herencia múltiple directa de clases, pero se puede lograr mediante el uso de interfaces. 
+En C#, no se admite herencia múltiple directa de clases, pero se puede lograr mediante el uso de interfaces.
 
 ```csharp
     using System;
@@ -1060,16 +1059,19 @@ En C#, no se admite herencia múltiple directa de clases, pero se puede lograr m
     }
 ```
 
-------------------------------------------------------------------
-| MiClase (Objeto)                                             |
-|----------------------------------------------------------------|
-| BaseClass                                                      |
-|   - Datos y métodos específicos de BaseClass                    |
-| IA                                                             |
-|   - Métodos de IA                                               |
-| IB                                                             |
-|   - Métodos de IB                                               |
-------------------------------------------------------------------
+---
+
+
+| MiClase (Objeto)                             |
+| ---------------------------------------------- |
+| BaseClass                                    |
+| - Datos y métodos específicos de BaseClass |
+| IA                                           |
+| - Métodos de IA                             |
+| IB                                           |
+| - Métodos de IB                             |
+
+---
 
 #### Excepciones:
 
@@ -1122,6 +1124,7 @@ Python emplea una técnica llamada "string interning" para un subconjunto de obj
 # C++
 
 ## Tipos de Valor (Asignación en el Stack)
+
 Cuando se crea un objeto en C++ como variable local dentro de una función, generalmente se asigna en el stack. La disposición de la memoria de este objeto contiene directamente sus miembros de datos en el orden en que se declaran dentro de la clase o estructura, posiblemente ajustada por el compilador para el relleno o la alineación.
 
 ```cpp
@@ -1137,6 +1140,7 @@ void funcion() {
 ```
 
 ## Asignación Dinámica (Asignación en el Heap)
+
 Los objetos también pueden asignarse dinámicamente en el heap utilizando el operador `new`. Esto es útil para objetos cuya vida útil debe extenderse más allá del ámbito en el que se crean o para objetos grandes para los cuales la asignación en el stack podría no ser adecuada.
 
 ```cpp
@@ -1147,11 +1151,8 @@ delete obj; // La memoria debe liberarse manualmente.
 ## Diseño del Objeto
 
 - **Clases Simples:** La disposición de la memoria de un objeto en C++ es lineal, lo que significa que sus miembros se disponen en memoria en el orden en que se declaran, aunque el compilador puede introducir relleno para fines de alineación.
-
 - **Herencia:** En clases con herencia, generalmente se disponen primero los miembros de la clase base, seguidos por los miembros de la clase derivada. Sin embargo, los detalles exactos pueden variar con la herencia múltiple y la herencia virtual, que pueden introducir complejidad adicional en el diseño del objeto, como tablas de funciones virtuales (vtables).
-
 - **Funciones Virtuales y Vtable:** Si una clase tiene una o más funciones virtuales, el compilador suele agregar un puntero oculto en el diseño del objeto, apuntando a una tabla de funciones virtuales (vtable) para la clase. La vtable contiene punteros a las funciones virtuales aplicables a la clase del objeto, lo que respalda el despacho dinámico (polimorfismo).
-
 - **Alineación:** Los compiladores pueden agregar relleno entre miembros o al final de un objeto para cumplir con los requisitos de alineación, lo que puede afectar el tamaño del objeto.
 
 **Conclusión:**
