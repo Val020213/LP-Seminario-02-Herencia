@@ -10,6 +10,8 @@
 
 ## Solución propuesta en `C#`
 
+![csharp](Resources/csharp.jpeg)
+
 Como en `C#` no se define la herencia múltiple, se utilizan interfaces para simular su comportamiento.
 A continuación se muestra **_el diagrama de clases_** de la solución propuesta.
 
@@ -361,6 +363,8 @@ En C#, los miembros de una interfaz son siempre públicos y no pueden tener modi
 
 ## Solución propuesta en `C++`
 
+![cpp](Resources/cpp.jpeg)
+
 En `C++` la herencia múltiple es soportada. A continuación se muestra `el diagrama de clases` de la solución propuesta.
 
 ```mermaid
@@ -560,6 +564,8 @@ En C++, la visibilidad también se controla mediante modificadores de acceso.
 - protected: El miembro es accesible dentro de la propia clase y sus clases derivadas.
 
 ## Solución propuesta en `Python`
+
+![python](Resources/python.jpeg)
 
 Ver [notebook](./Python/main.ipynb) con la solución propuesta en `Python`.
 
